@@ -62,6 +62,8 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 # include_directories(include ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
+include_directories(include ${catkin_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS})
+
 
 ## Declare a cpp library
 # add_library(mono_slam
@@ -69,7 +71,7 @@ catkin_package(
 # )
 
 ## Declare a cpp executable
-add_executable(mono-slam 
+add_executable(mono_slam 
 		src/monoslam_ransac.cpp 
 		#src/camOCV.cpp 
 		src/vslamRansac.cpp 
@@ -97,7 +99,7 @@ add_executable(mono-slam
 ## Specify libraries to link a library or executable target against
  #target_link_libraries(ludoslam ${catkin_LIBRARIES})
  
- target_link_libraries(mono-slam ${catkin_LIBRARIES} config++)
+ target_link_libraries(mono_slam ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} config++)
 
 #############
 ## Install ##
