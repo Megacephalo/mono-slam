@@ -7,6 +7,32 @@ in the 2013.
 [Reference: Russo L.O., Rosa S., Bona B., Matteucci M., "A ROS implementation of the mono-slam algorithm",
 International Journal of Computer Science & Information Technology, Vol. 6 Issue 1, p339](https://www.researchgate.net/publication/269200654_A_ROS_Implementation_of_the_Mono-Slam_Algorithm)
 
+## Installation:
+
+- libconfig
+
+Make sure that libconfig is already installed in your system:
+
+```
+sudo apt-get update
+sudo apt-get install libconfig++-dev
+```
+
+And let ROS checks for the presence of all neessary dependencies:
+
+```
+roscd && cd ..
+rosdep init
+rosdep update
+rosdep --from-paths src --ignore-src -y -r
+```
+
+By now, you should be able to compile:
+
+```
+roscd && cd ..
+catkin_make
+```
 
 ## Usage:
 
