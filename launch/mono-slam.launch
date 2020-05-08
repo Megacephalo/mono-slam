@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+<!-- Config -->
+<arg name="image_topic" default="" />
+
+<!-- mono-slam node -->
+<arg name="configuration_file" default="$(find mono-slam)/conf/confing.cfg" />
+<remap from="/camera/image_raw" to="$(arg image_topic)" />
+<node pkg="mono-slam" type="mono_slam" name="mono_slam" 
+        args="$(arg configuration_file)" />
+</launch>
